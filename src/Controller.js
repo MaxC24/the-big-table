@@ -5,8 +5,8 @@ class Controller extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			width: "",
-			height: ""
+			width: "20",
+			height: "20"
 		};
 		this.send = this.send.bind(this);
 		this.setWidth = this.setWidth.bind(this);
@@ -31,8 +31,8 @@ class Controller extends Component {
 
 	render() {
 		return ( <div>
-				width <input onChange={ this.setWidth }/>
-				height <input onChange={ this.setHeight } />
+				width <input onChange={ this.setWidth } value={this.state.width}/>
+				height <input onChange={ this.setHeight } value={this.state.height}/>
 				<button onClick={this.send}>Change Board</button>
 			</div>
 		)
