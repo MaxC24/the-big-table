@@ -1,16 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Controller = ({ setWH }) => {
+class Controller extends Component {
 
-	let width, height;
+	constructor(props){
+		super(props);
+		this.state = {
+			width: "",
+			height: ""
+		};
+		this.send = this.send.bind(this);
+		this.setWidth = this.setWidth.bind(this);
+		this.setHeight = this.setHeight.bind(this);
+	}
 
-	return (
-		<div>
-			width <input />
-			height <input />
-			<button onclick={setWH(width, height)}>Change Board</button>
-		</div>
-	)
+	send() {
+		this.props.setWH(parseInt(this.state.width), parseInt(this.state.height));
+	}
+
+	setWidth(e) {
+		this.setState({
+			width: e.target.value
+		})
+		console.log(e.target.value);
+	}
+
+	setHeight(e) {
+		this.setState({
+			height: e.target.value
+		})
+	}
+
+	render() {
+		return ( <div>
+				width <input onChange={ this.setWidth }/>
+				height <input onChange={ this.setHeight } />
+				<button onClick={this.send}>Change Board</button>
+			</div>
+		)
+	}
 }
 
 export default Controller;

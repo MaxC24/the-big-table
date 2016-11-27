@@ -24,8 +24,6 @@ class App extends Component {
   render() {
     return ( 
       <div>
-        width <input />
-        height <input />
         <Controller setWH={ this.setWH } />
         <Board width={this.state.width} height={this.state.height} />
       </div>
