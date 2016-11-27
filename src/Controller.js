@@ -21,7 +21,6 @@ class Controller extends Component {
 		this.setState({
 			width: e.target.value
 		})
-		console.log(e.target.value);
 	}
 
 	setHeight(e) {
