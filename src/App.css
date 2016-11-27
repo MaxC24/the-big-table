@@ -1,9 +1,12 @@
 table {
     border-collapse: collapse;
-    width: 100vw;
-    height: 100vw;
 }
 
 table, th, td {
     border: 1px solid black;
+}
+
+td {
+  width: 1vw;
+  height: 1vw;
 }
